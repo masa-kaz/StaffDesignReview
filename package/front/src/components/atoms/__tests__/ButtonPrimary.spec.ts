@@ -17,5 +17,3 @@ describe('ButtonPrimary (scenario)', () => {
     expect(wrapper.text()).toContain('とても長いラベル')
   })
 })
-
-

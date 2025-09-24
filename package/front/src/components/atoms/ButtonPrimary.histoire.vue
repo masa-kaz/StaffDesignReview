@@ -5,12 +5,16 @@ import { buttonPrimaryScenarios } from '@/scenarios/atoms/buttonPrimary'
 <template>
   <Story title="Atoms/ButtonPrimary">
     <Variant title="default">
-      <component :is="buttonPrimaryScenarios.component" v-bind="buttonPrimaryScenarios.variants.default.props" />
+      <component
+        :is="buttonPrimaryScenarios.component"
+        v-bind="buttonPrimaryScenarios.variants.default.props"
+      />
     </Variant>
     <Variant title="longLabel">
-      <component :is="buttonPrimaryScenarios.component" v-bind="buttonPrimaryScenarios.variants.longLabel.props" />
+      <component
+        :is="buttonPrimaryScenarios.component"
+        v-bind="buttonPrimaryScenarios.variants.longLabel.props"
+      />
     </Variant>
   </Story>
 </template>
-
-

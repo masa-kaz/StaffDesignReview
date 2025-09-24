@@ -10,5 +10,3 @@ describe('ButtonPrimary', () => {
     expect(wrapper.emitted('click')).toBeTruthy()
   })
 })
-
-

@@ -19,8 +19,14 @@ const emit = defineEmits<{ (e: 'cta'): void }>()
 </template>
 
 <style scoped>
-main { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
-.cta { display: flex; justify-content: center; margin-top: 1rem; }
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+.cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
 </style>
-
-

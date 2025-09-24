@@ -7,7 +7,6 @@ defineEmits<{ (e: 'click'): void }>()
   <button class="btn-primary" @click="$emit('click')">
     {{ label }}
   </button>
-  
 </template>
 
 <style scoped>
@@ -23,8 +22,10 @@ defineEmits<{ (e: 'click'): void }>()
   color: #fff;
   cursor: pointer;
 }
-.btn-primary:hover { background: #2563eb; }
-.btn-primary:active { background: #1d4ed8; }
+.btn-primary:hover {
+  background: #2563eb;
+}
+.btn-primary:active {
+  background: #1d4ed8;
+}
 </style>
-
-

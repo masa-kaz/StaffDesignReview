@@ -10,9 +10,17 @@ defineProps<{ title: string; subtitle?: string }>()
 </template>
 
 <style scoped>
-.hero { text-align: center; padding: 3rem 1rem; }
-.title { font-size: 2rem; line-height: 1.2; margin: 0; }
-.subtitle { color: #64748b; margin-top: 0.5rem; }
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.title {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0;
+}
+.subtitle {
+  color: #64748b;
+  margin-top: 0.5rem;
+}
 </style>
-
-

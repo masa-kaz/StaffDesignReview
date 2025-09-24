@@ -16,5 +16,3 @@ export const buttonPrimaryScenarios = {
 
 export type ButtonPrimaryScenario = typeof buttonPrimaryScenarios
 export type ButtonPrimaryProps = typeof buttonPrimaryScenarios.variants.default.props
-
-

@@ -13,7 +13,9 @@ const variant = computed(() => String(route.query.variant || 'default'))
 
 const scenario = computed(() => registry[scenarioKey.value as keyof typeof registry])
 const component = computed(() => scenario.value?.component)
-const props = computed(() => scenario.value?.variants?.[variant.value as 'default' | 'longLabel']?.props ?? {})
+const props = computed(
+  () => scenario.value?.variants?.[variant.value as 'default' | 'longLabel']?.props ?? {},
+)
 </script>
 
 <template>
@@ -23,5 +25,3 @@ const props = computed(() => scenario.value?.variants?.[variant.value as 'defaul
 </template>
 
 <style scoped></style>
-
-

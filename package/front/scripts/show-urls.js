@@ -5,7 +5,6 @@
  * verify:serve 実行時に起動したサーバーのURLをまとめて表示
  */
 
-const { execSync } = require('child_process');
 
 console.log('\n🚀 プレビューサーバーが起動しました！\n');
 
@@ -23,14 +22,10 @@ console.log('   - ブラウザで上記URLを開いて確認');
 console.log('');
 
 // オプション: ブラウザで自動開く（macOS/Linux/Windows対応）
-try {
-  const platform = process.platform;
-  const openCmd = platform === 'win32' ? 'start' : platform === 'darwin' ? 'open' : 'xdg-open';
-  
-  console.log('🌐 ブラウザで自動開く場合は以下を実行:');
-  console.log(`   ${openCmd} http://localhost:4173`);
-  console.log(`   ${openCmd} http://localhost:6006`);
-  console.log('');
-} catch (error) {
-  // エラーは無視（ブラウザ開くのは任意）
-}
+const platform = process.platform;
+const openCmd = platform === 'win32' ? 'start' : platform === 'darwin' ? 'open' : 'xdg-open';
+
+console.log('🌐 ブラウザで自動開く場合は以下を実行:');
+console.log(`   ${openCmd} http://localhost:4173`);
+console.log(`   ${openCmd} http://localhost:6006`);
+console.log('');
