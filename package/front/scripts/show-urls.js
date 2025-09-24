@@ -29,3 +29,28 @@ console.log('🌐 ブラウザで自動開く場合は以下を実行:');
 console.log(`   ${openCmd} http://localhost:4173`);
 console.log(`   ${openCmd} http://localhost:6006`);
 console.log('');
+
+// キーボード入力の監視
+console.log('⌨️  キーボード操作:');
+console.log('   - q + Enter: サーバーを停止');
+console.log('   - Ctrl+C: 強制終了');
+console.log('');
+
+// stdinの設定
+process.stdin.setRawMode(true);
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+// キー入力の監視
+process.stdin.on('data', (key) => {
+  if (key === 'q' || key === '\u0003') { // 'q' または Ctrl+C
+    console.log('\n\n🛑 サーバーを停止しています...\n');
+    process.exit(0);
+  }
+});
+
+// Ctrl+C の処理
+process.on('SIGINT', () => {
+  console.log('\n\n🛑 サーバーを停止しています...\n');
+  process.exit(0);
+});

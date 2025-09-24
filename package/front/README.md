@@ -73,7 +73,8 @@ npm run story:build
 npm run story:preview
 
 # 単体テスト（Vitest）
-npm run test:unit
+npm run test:unit        # テスト実行後、自然に終了
+npm run test:unit:watch  # ウォッチモード（開発時推奨）
 
 # E2E テスト（Playwright）
 # 初回のみ: npx playwright install
@@ -212,9 +213,10 @@ npm run format       # Prettier（必要に応じて）
 npm run type-check   # vue-tsc --build
 
 # 2) テスト（段階的に）
-npm run test:unit    # 単体テスト（Vitest）
+npm run test:unit        # 単体テスト（Vitest）- 自然に終了
+npm run test:unit:watch  # ウォッチモード（開発時推奨）
 # 必要に応じて E2E（時間がかかるため任意）
-npm run test:e2e     # E2E テスト（Playwright）
+npm run test:e2e         # E2E テスト（Playwright）
 
 # 3) ローカル動作確認
 npm run dev          # Vite の開発サーバー
@@ -247,8 +249,12 @@ npm run verify:full
 # 検証後にプレビューまで自動起動
 npm run verify:serve   # Webプレビュー + Histoireプレビューを並行起動 + URL表示
 
+# 改善されたプレビューコマンド（推奨）
+npm run verify:serve:auto    # 自動でブラウザを開く + 簡単な停止操作
+npm run verify:serve:timeout # タイムアウト機能付き（デフォルト30分）
+
 # URL表示のみ（サーバー起動後）
-npm run show-urls      # 起動中のサーバーURLをまとめて表示
+npm run show-urls      # 起動中のサーバーURLをまとめて表示（qキーで停止可能）
 ```
 
 ## 参考
