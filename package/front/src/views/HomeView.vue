@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import HomeTemplate from '@/components/templates/HomeTemplate.vue'
+
+function handleCta() {
+  alert('CTA clicked')
+}
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <HomeTemplate @cta="handleCta" />
 </template>

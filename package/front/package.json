@@ -12,15 +12,24 @@
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
+    "postinstall": "playwright install",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
     "lint:eslint": "eslint . --fix",
     "lint": "run-s lint:*",
     "format": "prettier --write src/",
+    "verify": "run-s lint format type-check test:unit build",
+    "verify:full": "run-s lint format type-check test:unit test:e2e build",
+    "serve:all": "run-p preview story:preview",
+    "show-urls": "node scripts/show-urls.js",
+    "verify:serve": "run-s verify story:build serve:all show-urls",
     "deploy": "netlify deploy --prod",
     "deploy:preview": "netlify deploy",
-    "dev:netlify": "netlify dev"
+    "dev:netlify": "netlify dev",
+    "story:dev": "histoire dev",
+    "story:build": "histoire build",
+    "story:preview": "histoire preview"
   },
   "dependencies": {
     "pinia": "^3.0.3",
@@ -28,6 +37,8 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@histoire/plugin-vue": "^0.17.17",
+    "histoire": "^0.17.17",
     "@playwright/test": "^1.54.1",
     "@prettier/plugin-oxc": "^0.0.4",
     "@tsconfig/node22": "^22.0.2",

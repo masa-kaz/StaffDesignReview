@@ -4,6 +4,12 @@
 
 [build.environment]
   NODE_VERSION = "20.19.0"
+  NPM_FLAGS = "--silent"
 
 [functions]
   directory = "functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
